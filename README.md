@@ -56,16 +56,16 @@
 
 - Exportamos los archivos en formato parquet por su **peso, eficiencia en la lectura o escritura de datos y acelerando **las consultas****
 - Se puede visualizar el proceso 🛠️ ETL en los siguientes links:
-  - [🛠️ ETL 📂 steam_games.json](https://github.com/bautiarmanicode/MLOps-SteamGames/blob/main/1_JupyterNotebooks/1.1_ETL_steam_games.ipynb)
-  - [🛠️ ETL 📂 users_items.json](https://github.com/bautiarmanicode/MachineLearning/blob/main/1_JupyterNotebooks/1.2_ETL_user_items.ipynb)
-  - [🛠️ ETL 📂 user_reviews.json](https://github.com/bautiarmanicode/MachineLearning/blob/main/1_JupyterNotebooks/1.3_ETL_user_reviews.ipynb)
+  - [🛠️ ETL 📂 steam_games.json](https://github.com/bautiarmanicode/STEAM_GAMES_MLOPS/blob/main/1_JupyterNotebooks/1.1_ETL_steam_games.ipynb)
+  - [🛠️ ETL 📂 users_items.json](https://github.com/bautiarmanicode/STEAM_GAMES_MLOPS/blob/main/1_JupyterNotebooks/1.2_ETL_user_items.ipynb)
+  - [🛠️ ETL 📂 user_reviews.json](https://github.com/bautiarmanicode/STEAM_GAMES_MLOPS/blob/main/1_JupyterNotebooks/1.3_ETL_user_reviews.ipynb)
 
 ### Continuamos haciendo🛠️Feature engineering
 
 - 📂 user_reviews.json: La columna "**sentiment_analysis**" se ha creado para las reseñas de los usuarios aplicando análisis de sentimiento con NLP en el dataset.
 - ✅ 🌐 `developer`
 - ✅ 🌐 `userdata`
-- El desarrollo de este proceso se encuentran en: [2.2_FeatureEngineering]() .
+- El desarrollo de este proceso se encuentran en: [2_FeatureEngineering](https://github.com/bautiarmanicode/STEAM_GAMES_MLOPS/blob/main/1_JupyterNotebooks/2_FeatureEngineering.ipynb) .
 
 **🌐 Desarrollo de [API REST o RESTful](https://rockcontent.com/es/blog/api-rest/)**
 
@@ -81,7 +81,7 @@
 
 **Pasos para ejecutar la api de forma local desde localHost:**
 
-1. 📥 **Clonar el Proyecto:** Usa `git clone https://github.com/❌` para descargar el proyecto.
+1. 📥 **Clonar el Proyecto:** Usa `git clone https://github.com/bautiarmanicode/STEAM_GAMES_MLOPS/tree/main` para descargar el proyecto.
 2. 🛠️ **Preparar el Entorno de Trabajo:**
    * Crea un entorno virtual con `Python -m venv venv`.
    * Activa el entorno con `venv\Scripts\activate`.
@@ -105,8 +105,8 @@ Siguiendo este [tutorial de Render](https://github.com/HX-FNegrete/render-fastap
 
 1. Creamos un nuevo servicio en Render
 2. Lo conectamos a nuestro repositorio.
-   1. Para ahorrar espacio en el plan gratuito de Render, utilizamos un repositorio exclusivo para el despliegue con los datos que limpiamos en este proyecto (podes visualizarlo aquí [Github Deployment Render](https://github.com/bautiarmanicode/MachineLearningRENDERDEPLOY)). ❌
-3. Nuestro servicio está corriendo en: [Deployment Render SteamGamesMLOPS](https://machinelearning-xb5s.onrender.com)   ~~❌ FALTA LINK~~
+   1. Para ahorrar espacio en el plan gratuito de Render, utilizamos un repositorio exclusivo para el despliegue con los datos que limpiamos en este proyecto (podes visualizarlo aquí [Github Deployment Render](https://github.com/bautiarmanicode/STEAM_GAMES_MLOPS_RENDERDEPLOY)). 
+3. Nuestro servicio está corriendo en: [Deployment Render SteamGamesMLOPS](https://machinelearning-xb5s.onrender.com)   
 
 **Detalles adicionales:**
 
@@ -127,7 +127,7 @@ Siguiendo este [tutorial de Render](https://github.com/HX-FNegrete/render-fastap
 
 Puedes leer un poco más sobre EDA en [este articulo](https://medium.com/swlh/introduction-to-exploratory-data-analysis-eda-d83424e47151)
 
-El codigo usado en esta parte del proceso se encuentra en: LINK
+El codigo usado en esta parte del proceso se encuentra en [3_EDA.ipynb](https://github.com/bautiarmanicode/STEAM_GAMES_MLOPS/blob/main/1_JupyterNotebooks/3_Eda.ipynb)
 
 ### 🤖 Departamento de Machine Learning:
 
@@ -136,7 +136,7 @@ Creamos un modelo de predicción **Machine Learning** **recomendacion_juego**( *
 Para crearlo elegimos, user_id, reviews_item_id y sentyment_analysis.
 El modelo fue creado utilizando SVD(Descomposicion en Valores Singulares)
 
-Los detalles de este proceso se encuentran en: **LINK** 
+Los detalles de este proceso se encuentran en [4_MachineLearning.ipynb](https://github.com/bautiarmanicode/STEAM_GAMES_MLOPS/blob/main/1_JupyterNotebooks/4_MachineLearning.ipynb)
 
 ---
 
@@ -144,7 +144,7 @@ Los detalles de este proceso se encuentran en: **LINK**
 
 📺 Para obtener información detallada sobre los pasos del proceso y una explicación más profunda.
 
-📹 Disfruta la demostracion del funcionamiento de la API y del modelo de ML en el siguiente enlace:  (Duración: x minutos).
+📹 Disfruta la demostracion del funcionamiento de la API y del modelo de ML en el siguiente enlace: ❌❌ (Duración: x minutos).
 
 ¡Disfruta del video! 😊
 
@@ -152,27 +152,27 @@ Los detalles de este proceso se encuentran en: **LINK**
 
 # Criterios de evaluación
 
-- Codigo:
+- ✅ Codigo:
   - Prolijo
   - Bien comentado
-  - Uso de clases y funciones (se encuentran en **data_utils**.py y las importo en mis Jupiter Notebooks) ❌FALTA LINK
-- Repositorio:
+  - Uso de clases y funciones (se encuentran en [data_utils.py ](https://github.com/bautiarmanicode/STEAM_GAMES_MLOPS/blob/main/1_JupyterNotebooks/data_utils.py)y las importo en mis Jupiter Notebooks)
+- ✅ Repositorio:
   - Nombres de archivo adecuados
   - Uso de carpetas para ordenar los archivos
-  - README.MD resetando el proyecto y el trabajo realizado
+  - **README.MD** explicando el proyecto y el trabajo realizado
 
 # Ruta de archivos del proyecto
 
-📂0 Dataset: Contiene todos los datos para este proyecto. 
+📂0 Dataset: Contiene todos los datos para este proyecto.
 
-- 0_ Diccionario_de_datos.md
+- [0_ Diccionario_de_datos.md](https://github.com/bautiarmanicode/STEAM_GAMES_MLOPS/blob/main/1_JupyterNotebooks/0_%20Diccionario_de_datos.md)
 
 📂1_JupyterNotebooks: Contiene los notebooks con los que se realizo este trabajo.
 
-- 1.1_ETL_steam_games.ipynb
-- 1.2_ETL_user_items.ipynb
-- 1.3_ETL_user_reviews.ipynb
-- 2_FeatureEngineering.ipynb
-- 3_EDA.ipynb
-- 4_MachineLearning.ipynb
-- data_utils.py
+- [🛠️ ETL 📂 steam_games.json](https://github.com/bautiarmanicode/STEAM_GAMES_MLOPS/blob/main/1_JupyterNotebooks/1.1_ETL_steam_games.ipynb)
+- [🛠️ ETL 📂 users_items.json](https://github.com/bautiarmanicode/STEAM_GAMES_MLOPS/blob/main/1_JupyterNotebooks/1.2_ETL_user_items.ipynb)
+- [🛠️ ETL 📂 user_reviews.json](https://github.com/bautiarmanicode/STEAM_GAMES_MLOPS/blob/main/1_JupyterNotebooks/1.3_ETL_user_reviews.ipynb)
+- [2_FeatureEngineering](https://github.com/bautiarmanicode/STEAM_GAMES_MLOPS/blob/main/1_JupyterNotebooks/2_FeatureEngineering.ipynb)
+- [3_EDA.ipynb](https://github.com/bautiarmanicode/STEAM_GAMES_MLOPS/blob/main/1_JupyterNotebooks/3_Eda.ipynb)
+- [4_MachineLearning.ipynb](https://github.com/bautiarmanicode/STEAM_GAMES_MLOPS/blob/main/1_JupyterNotebooks/4_MachineLearning.ipynb)
+- [data_utils.py ](https://github.com/bautiarmanicode/STEAM_GAMES_MLOPS/blob/main/1_JupyterNotebooks/data_utils.py)
