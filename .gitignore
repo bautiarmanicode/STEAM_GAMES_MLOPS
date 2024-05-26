@@ -1,0 +1,9 @@
+/venv
+venv
+/venv/
+0 Dataset/df_steam_games_LIMPIO.csv
+0 Dataset/user_reviews.json
+0 Dataset/users_items.json
+0 Dataset/steam_games.json
+__pycache__/main.cpython-310.pyc
+__pycache__/funciones_api.cpython-310.pyc
