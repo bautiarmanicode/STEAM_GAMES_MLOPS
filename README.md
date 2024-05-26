@@ -10,22 +10,21 @@
 
 1. **🛠️ Data Engineer:**
 
-   1. 🛠️ **ETL**: Limpiar y preparar los 📂 dataset de Steam para el análisis.
-   2. **📂 Feature Engineering:**
+   - 🛠️ **ETL**: Limpiar y preparar los 📂 dataset de Steam para el análisis.
+   - **📂 Feature Engineering:**
 
-      1. Desarrollo de las funciones para los endpoints.
-      2. Preparado de dataset para las consultas de la API.
-      3. Analisis de sentimiento en las reseñas de los usuarios aplicado con NLP en el dataset.
-   3. 🌐 **API**:
+     - Desarrollo de las funciones para los endpoints.
+     - Preparado de dataset para las consultas de la API.
+     - Analisis de sentimiento en las reseñas de los usuarios aplicado con NLP en el dataset.
+   - 🌐 **API**:
 
-      1. Con endpoints que proporcionarán acceso a los resultados
-      2. Despliegue automático desde GitHub
+     - Con endpoints que proporcionarán acceso a los resultados
+     - Despliegue automático desde GitHub
 2. **🤖 Machine Learning Operations:**
 
 - Implementar un sistema de recomendación de videojuegos para usuarios.
-- > En general se explican como:“A usuarios que son similares a tí también les gustó…”
-  >
-- - 🤖 2_ Modelo con relación **user-item:** toma un usuario, se encuentran usuarios similares, recibimos una lista con 5 juegos recomendados para dicho usuario.
+- En general se explican como:“A usuarios que son similares a tí también les gustó…”
+- 🤖 Modelo con relación **user-item:** toma un usuario, se encuentran usuarios similares, recibimos una lista con 5 juegos recomendados para dicho usuario.
 
 ## **FLUJO DE TRABAJO**
 
