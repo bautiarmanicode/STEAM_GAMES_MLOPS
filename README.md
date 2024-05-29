@@ -143,7 +143,7 @@ Los detalles de este proceso se encuentran en [4_MachineLearning.ipynb](https://
 
 📺 Para obtener información detallada sobre los pasos del proceso y una explicación más profunda.
 
-📹 Disfruta la demostracion del funcionamiento de la API y del modelo de ML en el siguiente enlace: ❌❌ (Duración: x minutos).
+📹 Disfruta la demostracion del funcionamiento de la API y del modelo de ML en el siguiente [enlace](https://drive.google.com/file/d/1Q-1YeWJm4LJDuMtig_XMulJv5PFh_NW1/view?usp=drive_link): (Duración: 6.50 minutos aprox).
 
 ¡Disfruta del video! 😊
 
