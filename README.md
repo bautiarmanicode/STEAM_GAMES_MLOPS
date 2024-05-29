@@ -41,7 +41,7 @@
 **📦 Extraccio**n de datos:
 
 - La fuente de datos para este proyecto fueron 3 **📂 archivos JSON** comprimidos en gz
-- Puedes ver el **diccionario de datos** de estos archivos tocando [aquí](https://github.com/bautiarmanicode/MachineLearning/blob/main/Diccionario_de_datos.md).
+- Puedes ver el **diccionario de datos** de estos archivos tocando [aquí](https://github.com/bautiarmanicode/MachineLearning/blob/main/1_JupyterNotebooks/0_%20Diccionario_de_datos.md).
 
 🔄 **Transformaciones de los datos:**
 
