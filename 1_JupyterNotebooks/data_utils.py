@@ -10,37 +10,69 @@ import gzip
 import os
 
 def data_type_check(df):
-    # Create a dictionary to store the data summary
-    dataframe = {"columna": [], "%_no_nulos": [], "%_nulos": [], "total_nulos": [], "tipo_dato": []}
-    # Header
+    """
+    Genera un resumen del DataFrame que incluye la proporción de valores nulos y no nulos, 
+    el tipo de datos y la cantidad total de nulos por columna.
+
+    Parámetros:
+    df (pandas.DataFrame): El DataFrame a ser analizado.
+
+    Retorna:
+    None: Esta función imprime el resumen del DataFrame en la consola.
+    """
+    # Crear un diccionario para almacenar el resumen de los datos
+    dataframe = {
+        "columna": [], 
+        "%_no_nulos": [], 
+        "%_nulos": [], 
+        "total_nulos": [], 
+        "tipo_dato": []
+    }
+    
+    # Encabezado del resumen
     print("\n" + "=" * 40)
     print(" Resumen del dataframe:")
     print("\n" + "=" * 40)
+    
     for columna in df.columns:
-        # Calcular el porcentaje de no nulos
+        # Calcular el porcentaje de valores no nulos
         porcentaje_no_nulos = (df[columna].count() / len(df)) * 100
         # Obtener el tipo de dato directamente
         tipo_dato = df[columna].dtype  
-        # Append la informacion a un diccionario
+        # Agregar la información al diccionario
         dataframe["columna"].append(columna)
         dataframe["%_no_nulos"].append(round(porcentaje_no_nulos, 2))
         dataframe["%_nulos"].append(round(100 - porcentaje_no_nulos, 2))
         dataframe["total_nulos"].append(df[columna].isnull().sum())
         dataframe["tipo_dato"].append(tipo_dato)
-    # Creamos el dataframe
+    
+    # Crear el DataFrame con la información recopilada
     df_info = pd.DataFrame(dataframe)
     print("Dimensiones: ", df.shape)
-    print(df_info)    
-
+    print(df_info) 
     
 
 
 def analisis_sentimiento(review):
-    
+    """
+    Analiza el sentimiento de una reseña y clasifica su polaridad en tres categorías:
+    negativa, neutra y positiva.
+
+    Parámetros:
+    review (str): La reseña a ser analizada. Puede ser None.
+
+    Retorna:
+    int: Un valor entero que representa la clasificación del sentimiento:
+        - 0: Sentimiento negativo
+        - 1: Sentimiento neutro o sin análisis (cuando la reseña es None)
+        - 2: Sentimiento positivo
+    """
     if review is None:
         return 1
+
     analysis = TextBlob(review)
     polarity = analysis.sentiment.polarity
+
     if polarity < -0.2:
         return 0
     elif polarity > 0.2:
@@ -49,40 +81,94 @@ def analisis_sentimiento(review):
         return 1
 
    
-def ej_review_sentimiento(reviews, sentiments):    
+def ej_review_sentimiento(reviews, sentiments):
+    """
+    Esta función toma dos listas: reviews (reseñas) y sentiments (sentimientos).
+    Itera sobre los valores de sentimiento (0, 1, 2) y para cada valor:
+    1. Imprime un encabezado indicando el valor de sentimiento actual.
+    2. Filtra las reseñas que tienen ese valor de sentimiento.
+    3. Imprime las primeras 3 reseñas filtradas con su índice.
+    4. Imprime una línea en blanco.
+    """
     for sentiment_value in range(3):
-        print(f"En la sección de evaluación de sentimientos, se presentan los siguientes ejemplos de reseñas para {sentiment_value}:")
-        sentiment_reviews = [review for review, sentiment in zip(reviews, sentiments) if sentiment == sentiment_value]        
+        print(
+            f"En la sección de evaluación de sentimientos, se presentan los siguientes ejemplos de reseñas para {sentiment_value}:"
+        )
+        sentiment_reviews = [
+            review
+            for review, sentiment in zip(reviews, sentiments)
+            if sentiment == sentiment_value
+        ]
         for i, review in enumerate(sentiment_reviews[:3], start=1):
-            print(f"Reseña: {i}: {review}")        
+            print(f"Reseña: {i}: {review}")
         print("\n")
 
 
-def duplicados_columna(df, columna): 
-    #Se filtran las filas duplicadas
+def duplicados_columna(df, columna):
+    """
+    Función que identifica y devuelve las filas duplicadas de un DataFrame según una columna específica.
+
+    Args:
+        df (pandas.DataFrame): DataFrame del cual se quieren identificar las filas duplicadas.
+        columna (str): Nombre de la columna por la cual se quieren identificar las filas duplicadas.
+
+    Returns:
+        pandas.DataFrame: DataFrame con las filas duplicadas ordenadas por la columna especificada.
+        Si no hay filas duplicadas, devuelve el string "No hay duplicados".
+    """
+    # Se filtran las filas duplicadas
     duplicated_rows = df[df.duplicated(subset=columna, keep=False)]
     if duplicated_rows.empty:
-        return "No hay duplicados"    
-    #se ordenan las filas duplicadas para comparar entre sí
+        return "No hay duplicados"
+    # se ordenan las filas duplicadas para comparar entre sí
     duplicated_rows_sorted = duplicated_rows.sort_values(by=columna)
     return duplicated_rows_sorted
 
 
 def filtrar_valores_letras(values):
+    """
+    Filtra una lista de valores y devuelve una nueva lista que contiene solo los valores que son cadenas de texto (str).
+
+    Args:
+        values (list): Lista de valores a filtrar.
+
+    Returns:
+        list: Nueva lista que contiene solo los valores que son cadenas de texto.
+    """
     return [value for value in values if isinstance(value, str)]
 
 
 def descomprimir_archivos_gz(archivos_gz, carpeta_destino):
+    """
+    Descomprime archivos .gz en una carpeta de destino.
+
+    Args:
+        archivos_gz (list): Lista de rutas de archivos .gz a descomprimir.
+        carpeta_destino (str): Ruta de la carpeta donde se descomprimirán los archivos.
+
+    Returns:
+        None
+    """
     for archivo_gz in archivos_gz:
-        with gzip.open(archivo_gz, 'rb') as f_in:
+        with gzip.open(archivo_gz, "rb") as f_in:
             contenido = f_in.read()
-            archivo_destino = os.path.join(carpeta_destino, os.path.splitext(os.path.basename(archivo_gz))[0])
-            with open(archivo_destino, 'wb') as f_out:
+            archivo_destino = os.path.join(
+                carpeta_destino, os.path.splitext(os.path.basename(archivo_gz))[0]
+            )
+            with open(archivo_destino, "wb") as f_out:
                 f_out.write(contenido)
-        print(f'Archivo descomprimido: {archivo_destino}')
+        print(f"Archivo descomprimido: {archivo_destino}")
 
     
+
 def data_type_check_EDA(df):
+    """
+Esta función realiza un análisis exploratorio de datos (EDA) sobre un DataFrame de Pandas.
+Genera un resumen de las características del DataFrame, incluyendo el nombre de las columnas,
+el número y porcentaje de valores nulos y no nulos, y el tipo de datos de cada columna.
+Además, crea una visualización de barras horizontales que muestra el porcentaje de valores
+nulos y no nulos para cada columna.
+"""
     # Crear un diccionario para almacenar el resumen de los datos
     dataframe = {"columna": [], "no_nulos": [], "%_no_nulos": [], "nulos": [], "%_nulos": [], "tipo_dato": []}
     # Obtener el nombre del DataFrame

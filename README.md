@@ -104,8 +104,8 @@ Siguiendo este [tutorial de Render](https://github.com/HX-FNegrete/render-fastap
 
 1. Creamos un nuevo servicio en Render
 2. Lo conectamos a nuestro repositorio.
-   1. Para ahorrar espacio en el plan gratuito de Render, utilizamos un repositorio exclusivo para el despliegue con los datos que limpiamos en este proyecto (podes visualizarlo aquí [Github Deployment Render](https://github.com/bautiarmanicode/STEAM_GAMES_MLOPS_RENDERDEPLOY)). 
-3. Nuestro servicio está corriendo en: [Deployment Render SteamGamesMLOPS](https://machinelearning-xb5s.onrender.com)   
+   1. Para ahorrar espacio en el plan gratuito de Render, utilizamos un repositorio exclusivo para el despliegue con los datos que limpiamos en este proyecto (podes visualizarlo aquí [Github Deployment Render](https://github.com/bautiarmanicode/STEAM_GAMES_MLOPS_RENDERDEPLOY)).
+3. Nuestro servicio está corriendo en: [Deployment Render SteamGamesMLOPS](https://machinelearning-xb5s.onrender.com)
 
 **Detalles adicionales:**
 
